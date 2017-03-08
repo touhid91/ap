@@ -1,0 +1,15 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>audioplayer</title>
+</head>
+<body>
+<script>
+    const _processor = new Worker('processor.js')
+    _processor.postMessage(`${window.location.origin}/audioplayer/test.wav`)
+    _processor.onmessage = (e) => console.log(e)
+</script>
+</body>
+</html>
